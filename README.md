@@ -1,1 +1,1 @@
-# android_vendor_micromax_a106
+# android_vendor_huawei_h30u10
