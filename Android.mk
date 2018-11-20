@@ -18,7 +18,6 @@ ifneq ($(filter h30u10, $(TARGET_DEVICE)),)
 
 #include $(CLEAR_VARS)
 #LOCAL_MODULE := libdpframework
-#LOCAL_MODULE_OWNER := $VENDOR
 #LOCAL_SRC_FILES := proprietary/lib/libdpframework.so
 #LOCAL_MODULE_TAGS := optional
 #LOCAL_MODULE_SUFFIX := .so
@@ -45,5 +44,35 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 include $(BUILD_PREBUILT)
+
+
+#include $(CLEAR_VARS)
+#LOCAL_MODULE := libui_ext
+#LOCAL_SRC_FILES := proprietary/lib/libui_ext.so
+#LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+#LOCAL_MODULE_SUFFIX := .so
+#include $(BUILD_PREBUILT)
+
+
+ifeq ($(USE_MTK_CAMERA_WRAPPER),true) 
+
+#include $(CLEAR_VARS) 
+#LOCAL_MODULE := libcam1client 
+#LOCAL_SRC_FILES := proprietary/lib/libcam1client.so 
+#LOCAL_MODULE_CLASS := SHARED_LIBRARIES 
+#LOCAL_MODULE_SUFFIX := .so 
+#include $(BUILD_PREBUILT) 
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libcam_utils
+LOCAL_MODULE_OWNER := $VENDOR
+LOCAL_SRC_FILES := proprietary/lib/libcam_utils.so
+LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+include $(BUILD_PREBUILT)
+endif
+
 
 endif
