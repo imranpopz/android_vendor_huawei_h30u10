@@ -30,7 +30,7 @@ include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := mtk-ril
-LOCAL_SRC_FILE := proprietary/lib/mtk-ril.so
+LOCAL_SRC_FILES := proprietary/lib/mtk-ril.so
 LOCAL_PROPRIETARY_MODULE = true
 LOCAL_MULTILIB := both
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
