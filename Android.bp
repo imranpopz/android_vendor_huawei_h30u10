@@ -1,0 +1,12 @@
+cc_prebuilt_library_shared {
+    name: "libdpframework",
+    vendor: true,
+    target: {
+             android_arm: {
+                    srcs: ["proprietary/lib/libdpframework.so"],
+             },
+            },
+           strip: {
+                   none:true,
+             },
+    }
